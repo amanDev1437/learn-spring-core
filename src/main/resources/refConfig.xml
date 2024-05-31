@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="com.aman.reference.TrainDriver" name="driver1">
+        <property name="driverName" value="Ashish Singh"/>
+        <property name="driverAge" value="34"/>
+    </bean>
+
+    <bean class="com.aman.reference.Train" name="train1">
+        <property name="name" value="Vande Bharat"/>
+        <property name="speed" value="210"/>
+        <property name="td" ref="driver1"/>
+    </bean>
+</beans>

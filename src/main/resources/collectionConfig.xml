@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.aman.collections.Emp" name="emp1">
+        <property name="empName" value="Aman Singh"/>
+
+        <property name="empId" value="101"/>
+
+        <property name="phones">
+            <list>
+                <value>8840830169</value>
+                <value>9911227551</value>
+                <value>(315672560</value>
+            </list>
+        </property>
+
+        <property name="addresses">
+            <set>
+                <value>Noida</value>
+                <value>Bhadohi</value>
+            </set>
+        </property>
+
+        <property name="courses">
+            <map>
+                <entry key="java" value="2 months"/>
+                <entry key="javascript" value="4 months"/>
+                <entry key="React" value="6 months"/>
+            </map>
+        </property>
+    </bean>
+</beans>
