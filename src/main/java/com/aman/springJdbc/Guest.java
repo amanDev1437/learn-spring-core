@@ -39,4 +39,8 @@ public class Guest {
         this.contact = contact;
     }
 
+    public String toString(){
+        return "guestId="+guestId+" guestName="+guestName+ " contact="+contact;
+    }
+
 }

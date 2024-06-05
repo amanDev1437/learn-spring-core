@@ -1,6 +1,9 @@
 package com.aman.springJdbc;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
+import java.util.List;
 
 public class GuestDao {
 
@@ -24,11 +27,24 @@ public class GuestDao {
         return this.jdbcTemplate.update(query,guest.getGuestName(),guest.getGuestId());
     }
 
-    public int delete(Guest guest){
+    public int delete(int guestID){
         String query = "delete from guests where guestId=?";
 
-        return this.jdbcTemplate.update(query,guest.getGuestId());
+        return this.jdbcTemplate.update(query,guestID);
     }
 
+    public Guest getGuest(int guestID){
+        RowMapper<Guest> rowMapper = new RowMap();
+
+        String query = "select * from guests where guestId=?";
+
+        return this.jdbcTemplate.queryForObject(query,rowMapper,guestID);
+    }
+
+    public List<Guest> getAllGuest(){
+        String query = "select * from guests";
+
+        return this.jdbcTemplate.query(query, new RowMap());
+    }
 
 }
